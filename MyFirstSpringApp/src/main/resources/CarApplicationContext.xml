@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean name="engine"
+		class="com.warrior.methodinjection.bean.Engine" scope="prototype">
+
+		<property name="type" value="UV4512"></property>
+		<property name="capacity" value="458559"></property>
+ 
+	</bean>
+	
+	<bean name="car" class="com.warrior.methodinjection.bean.Car">
+		<lookup-method name="createEngine" bean="engine"/>
+		<property name="make" value="19198"/>
+		<property name="type" value="TATA NEXUS"/>
+	</bean>
+	
+
+
+</beans>

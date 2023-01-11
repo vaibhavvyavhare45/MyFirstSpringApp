@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- <bean name="obj" class="com.prowings.beans.Person" autowire="byType"> -->
+
+	<bean name="person" class="com.prowings.beans.Person" scope="prototype" autowire="byType"/>
+	
+
+	 <bean name="address" class="com.prowings.beans.Address">
+		<property name="city" value="pune"/>
+		<property name="country" value="INDIA"/>
+		<property name="pin" value="154586"/>
+	</bean>
+	
+<!--  	<bean name="address1" class="com.prowings.beans.Address">
+		<constructor-arg name="city" value="pune"></constructor-arg>
+		<constructor-arg name="country" value="INDIA"></constructor-arg>
+		<constructor-arg name="pin" value="154586"></constructor-arg>
+	</bean>-->
+	
+	<bean name="dept" class="com.prowings.beans.Department" >
+		<property name="deptId" value="123"/>
+		<property name="Name" value="HR"/>
+	</bean>
+</beans>
